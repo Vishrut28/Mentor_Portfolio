@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Arushi Kothari | Strategic Business Leader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a66c2;
+            --secondary: #00b0ff;
+            --accent: #9c7afd;
+            --dark: #0a0a12;
+            --darker: #050507;
+            --light: #f5f5f7;
+            --gray: #86868b;
+            --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --glow: 0 0 25px rgba(156, 122, 253, 0.3);
+        }
+
+        body {
+            background: radial-gradient(circle at top right, var(--darker) 0%, var(--dark) 70%);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        /* Holographic background layers */
+        .background-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.08;
+        }
+
+        .layer-1 {
+            background: radial-gradient(circle at 20% 30%, var(--primary) 0%, transparent 40%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .layer-2 {
+            background: radial-gradient(circle at 80% 70%, var(--accent) 0%, transparent 40%);
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        .layer-3 {
+            background: radial-gradient(circle at 50% 20%, var(--secondary) 0%, transparent 30%);
+            animation: float 30s ease-in-out infinite;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header with holographic effect */
+        header {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .profile-badge {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 2.5rem;
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.1), rgba(0, 176, 255, 0.1), rgba(156, 122, 253, 0.1));
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--glow);
+            animation: rotateHue 12s linear infinite;
+        }
+
+        .profile-badge::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.2;
+            animation: rotate 20s linear infinite;
+        }
+
+        .profile-badge::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        .profile-badge i {
+            font-size: 4rem;
+            color: var(--accent);
+            z-index: 2;
+            text-shadow: var(--glow);
+        }
+
+        h1 {
+            font-size: 4.2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, var(--light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.03em;
+            text-shadow: 0 5px 15px rgba(156, 122, 253, 0.2);
+        }
+
+        .headline {
+            color: var(--secondary);
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-item:hover {
+            background: rgba(156, 122, 253, 0.1);
+            transform: translateY(-3px);
+            box-shadow: var(--glow);
+        }
+
+        .about-section {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.7), rgba(20, 20, 30, 0.9));
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 0 auto;
+            max-width: 900px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(156, 122, 253, 0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(156, 122, 253, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        .about-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Section styling with holographic borders */
+        section {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.6), rgba(25, 25, 35, 0.8));
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                inset 0 0 30px rgba(156, 122, 253, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        section:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(156, 122, 253, 0.2),
+                inset 0 0 30px rgba(156, 122, 253, 0.1);
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        h2 {
+            font-size: 2.6rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            background: linear-gradient(to right, var(--light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(40, 40, 50, 0.7), rgba(35, 35, 45, 0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            z-index: -1;
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(156, 122, 253, 0.15);
+        }
+
+        .experience-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .company {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .duration {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(156, 122, 253, 0.15);
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .responsibilities {
+            padding-left: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .responsibilities li {
+            margin-bottom: 1rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .responsibilities li::before {
+            content: '▹';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(156, 122, 253, 0.15);
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            margin: 0.8rem 0.8rem 0.8rem 0;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: rgba(156, 122, 253, 0.25);
+            transform: translateY(-3px);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .skill-item:hover {
+            background: rgba(156, 122, 253, 0.1);
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(156, 122, 253, 0.1);
+        }
+
+        .endorsements {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .education-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .academic-detail {
+            margin-top: 0.8rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .academic-highlight {
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        /* Professional Impact Section */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(40, 40, 50, 0.7), rgba(35, 35, 45, 0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+        }
+
+        .stat-value {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 1rem 0;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Footer with holographic effect */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--gray);
+            font-size: 1rem;
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+
+        .contact-icons a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1.6rem;
+            transition: var(--transition);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-icons a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .contact-icons a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--glow);
+        }
+
+        .contact-icons a:hover::before {
+            opacity: 0.3;
+        }
+
+        .contact-icons a:hover i {
+            color: var(--accent);
+            text-shadow: var(--glow);
+        }
+
+        /* Animations */
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotateHue {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-10px, -10px); }
+            50% { transform: translate(10px, 10px); }
+            75% { transform: translate(10px, -10px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            header {
+                padding: 4rem 1rem 3rem;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .headline {
+                font-size: 1.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.2rem;
+            }
+            
+            .about-section, section {
+                padding: 2.2rem 1.5rem;
+            }
+            
+            .profile-badge {
+                width: 120px;
+                height: 120px;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .headline {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .stat-value {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Holographic background layers -->
+    <div class="background-layer layer-1"></div>
+    <div class="background-layer layer-2"></div>
+    <div class="background-layer layer-3"></div>
+    
+    <div class="container">
+        <header>
+            <div class="profile-badge floating">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="header-content">
+                <h1>Arushi Kothari</h1>
+                <div class="headline">Program Manager - CEO's Office | Building Retail Business @Cars24</div>
+                
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Gurugram, Haryana, India
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i> 1K+ Professional Network
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i> Chartered Accountant
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line"></i> EBITDA Strategist
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <div class="about-content">
+                        <p>Chartered Accountant and strategic business leader currently spearheading programs at CARS24 with a clear mission: achieve EBITDA positivity in our retail business this fiscal year. I own the P&L, drive financial planning and analysis (FP&A), and ensure cross-functional alignment and accountability across teams.</p>
+                        <p>My expertise lies at the intersection of finance and execution—transforming insights into actionable strategies in budgeting, stakeholder management, and operational efficiency to drive sustainable, scalable business growth.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Professional Impact -->
+        <section id="impact">
+            <h2><i class="fas fa-bullseye"></i> Strategic Impact</h2>
+            
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <i class="fas fa-money-bill-trend-up fa-2x"></i>
+                    <div class="stat-value">EBITDA+</div>
+                    <div class="stat-label">Driving retail business to profitability</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-chart-line fa-2x"></i>
+                    <div class="stat-value">18%</div>
+                    <div class="stat-label">Operational cost reduction</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-stopwatch fa-2x"></i>
+                    <div class="stat-value">25%</div>
+                    <div class="stat-label">Faster customer journey</div>
+                </div>
+                
+                <div class="stat-card">
+                    <i class="fas fa-users fa-2x"></i>
+                    <div class="stat-value">10+</div>
+                    <div class="stat-label">Cross-functional teams led</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Program Manager</h3>
+                <div class="company">
+                    <i class="fas fa-building"></i> Cars24 Joint Venture - Cariot Auto
+                </div>
+                <span class="duration">Feb 2025 - Present · 6 months</span>
+                <div class="location-tag">
+                    <i class="fas fa-map-pin"></i> Gurgaon, India
+                </div>
+                <p>As a Chartered Accountant leading the Visit-to-Delivery cycle and cost optimisation at CARS24, I combine financial acumen with operational leadership to optimize performance.</p>
+                <ul class="responsibilities">
+                    <li>Own P&L responsibility with focus on achieving EBITDA positivity</li>
+                    <li>Drive financial planning and analysis (FP&A) for retail operations</li>
+                    <li>Manage manpower allocation and streamline customer journeys</li>
+                    <li>Lead cross-functional teams to deliver exceptional customer experiences</li>
+                    <li>Implement data-driven decision-making for operational improvements</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Associate Manager</h3>
+                <div class="company">
+                    <i class="fas fa-building"></i> Vedanta Group
+                </div>
+                <span class="duration">May 2023 - Feb 2025 · 1 year 10 months</span>
+                <p>Financial strategy and operational leadership in a diversified natural resources company.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Management Trainee - Finance</h3>
+                <div class="company">
+                    <i class="fas fa-building"></i> Cairn Oil and Gas
+                </div>
+                <span class="duration">Nov 2022 - May 2023 · 7 months</span>
+                <div class="location-tag">
+                    <i class="fas fa-map-pin"></i> Rajasthan, India
+                </div>
+                <p>Developed expertise in financial operations within the oil and gas sector.</p>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education & Credentials</h2>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h3><i class="fas fa-university"></i> Chartered Accountancy</h3>
+                    <div class="company">The Institute of Chartered Accountants of India</div>
+                    <div class="academic-detail">CA-Finals</div>
+                    <span class="academic-highlight">Cleared in first attempt with five exemptions</span>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-certificate"></i> CA Intermediate</h3>
+                    <div class="company">The Institute of Chartered Accountants of India</div>
+                    <span class="duration">2019 - Present</span>
+                    <span class="academic-highlight">Cleared with exemptions in all subjects</span>
+                    <span class="academic-highlight">Scored 589/800 (Top 5%)</span>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-graduation-cap"></i> Bachelor of Commerce</h3>
+                    <div class="company">Gujarat University</div>
+                    <span class="academic-highlight">Accounting and Finance</span>
+                    <span class="academic-highlight">First Class Distinction</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2><i class="fas fa-code"></i> Core Expertise</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <span>Financial Planning & Analysis (FP&A)</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+                <div class="skill-item">
+                    <span>P&L Management</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+                <div class="skill-item">
+                    <span>EBITDA Optimization</span>
+                    <span class="endorsements">★★★★☆</span>
+                </div>
+                <div class="skill-item">
+                    <span>Strategic Budgeting</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+                <div class="skill-item">
+                    <span>Operational Leadership</span>
+                    <span class="endorsements">★★★★☆</span>
+                </div>
+                <div class="skill-item">
+                    <span>Stakeholder Management</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+                <div class="skill-item">
+                    <span>Process Optimization</span>
+                    <span class="endorsements">★★★★☆</span>
+                </div>
+                <div class="skill-item">
+                    <span>Tax Compliance</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+                <div class="skill-item">
+                    <span>Auditing</span>
+                    <span class="endorsements">★★★★☆</span>
+                </div>
+                <div class="skill-item">
+                    <span>Financial Modeling</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+                <div class="skill-item">
+                    <span>Cross-functional Alignment</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+                <div class="skill-item">
+                    <span>Data-Driven Decision Making</span>
+                    <span class="endorsements">★★★★★</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="accomplishments">
+            <h2><i class="fas fa-trophy"></i> Professional Achievements</h2>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h3><i class="fas fa-medal"></i> Academic Excellence</h3>
+                    <p>Cleared CA-Finals in first attempt with five exemptions</p>
+                    <p>CA Intermediate cleared with exemptions in all subjects</p>
+                    <p>Ranked in top 5% with 589/800 score in CA Intermediate</p>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-chart-line"></i> Business Impact</h3>
+                    <p>Driving Cars24 retail business toward EBITDA positivity</p>
+                    <p>Optimized operational costs by 18% in current role</p>
+                    <p>Streamlined customer journey reducing delivery time by 25%</p>
+                </div>
+                
+                <div class="card">
+                    <h3><i class="fas fa-certificate"></i> Professional Development</h3>
+                    <p>Featured speaker at India Financial Planning Conclave 2024</p>
+                    <p>Regular contributor to financial leadership forums</p>
+                    <p>Continuous professional development in strategic finance</p>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="contact-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-phone-alt"></i></a>
+            </div>
+            <p>© 2025 Arushi Kothari | Chartered Accountant & Strategic Business Leader</p>
+            <p style="margin-top: 0.8rem;">Crafting sustainable growth through financial excellence and operational leadership</p>
+        </footer>
+    </div>
+</body>
+</html>
